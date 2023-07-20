@@ -1,0 +1,47 @@
+@use "variables";
+
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url("../../../public/fonts/Altehaasgrotesk-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url("../../../public/fonts/Altehaasgrotesk-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Yoxall';
+  src: url("../../../public/fonts/Yoxall-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Yoxxal';
+  src: url("../../../public/fonts/Yoxall-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+}
+
+body,
+button {
+  font-family: $body-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}

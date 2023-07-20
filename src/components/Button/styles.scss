@@ -1,0 +1,17 @@
+@import '/src/styles/base/variables';
+
+.button {
+  transition: 0.2s all ease-in-out;
+  background-color: transparent;
+  text-transform: uppercase;
+  border: 2px solid $color-main;
+  padding: 10px 15px;
+  color: $color-main;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $color-main;
+    color: $background-secondary;
+    cursor: pointer;
+  }
+}

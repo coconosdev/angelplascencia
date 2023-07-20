@@ -1,0 +1,16 @@
+@import '/src/styles/base/variables';
+
+.title {
+  font-size: calc(45px + 2vmin);
+  font-weight: bold;
+  text-align: left;
+  color: $color-white;
+
+  span {
+    display: block;
+  }
+}
+
+.button-wrapper {
+  margin-top: 30px;
+}

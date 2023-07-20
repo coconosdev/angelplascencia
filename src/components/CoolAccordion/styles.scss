@@ -1,0 +1,107 @@
+@import '/src/styles/base/variables';
+
+.accordionWrapper {
+  .MuiAccordion-root {
+    max-width: 640px;
+    background-color: transparent;
+    color: $color-white;
+
+    + .MuiAccordion-root {
+      margin-top: 15px;
+    }
+  }
+
+  .MuiAccordionSummary-root {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-secondary;
+    font-weight: bold;
+    border-radius: 5px;
+
+    &.Mui-expanded {
+      margin-bottom: 15px;
+    }
+
+    .MuiAccordionSummary-content {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 15px;
+    }
+
+    .MuiAccordionSummary-expandIconWrapper {
+      color: $color-white;
+    }
+  }
+
+  .MuiAccordionDetails-root {
+    position: relative;
+    border-radius: 5px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: $color-main;
+      opacity: 0.1;
+    }
+  }
+
+  .data {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    position: relative;
+
+    svg {
+      margin-right: 8px;
+    }
+
+    .page {
+      margin-left: 30px;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    right: 20px;
+    top: 33px;
+    max-height: 60px;
+    max-width: 100px;
+  }
+
+  .description {
+    font-size: 16px;
+    padding-right: 120px;
+  }
+
+  .skills {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 15px;
+    gap: 10px;
+
+    .pill {
+      padding: 5px 10px;
+      border-radius: 10px;
+      border: 1px solid salmon;
+      background-color: indigo;
+      color: $color-white;
+      font-size: 14px;
+
+      // + .pill {
+      //   margin-left: 10px;
+      // }
+    }
+  }
+}
