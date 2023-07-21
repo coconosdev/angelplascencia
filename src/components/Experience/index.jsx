@@ -1,4 +1,5 @@
 import React from 'react';
+import Heading from '../Heading';
 import CoolAccordion from '../CoolAccordion';
 import juniperLogo from '../../images/logos/juniper.png';
 import novaLogo from '../../images/logos/nova.png';
@@ -91,8 +92,8 @@ const experienceArray = [
 const Experience = () => {
   const reversedArray = [...experienceArray].reverse();
   return (
-    <div>
-      <h1>Experience</h1>
+    <div className="experienceWrapper">
+      <Heading>Experience</Heading>
       <CoolAccordion array={reversedArray} />
     </div>
   );

@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Cube from '../Cube';
+import Heading from '../Heading';
 
 import './styles.scss';
 
 const Skills = () => {
   return (
     <div>
-      <h1>Skills</h1>
+      <Heading>Skills</Heading>
       <p>
         The main area of my expertise is front end development building medium and big web apps with
         React, Angular, Javascript, Typescript, Next.js, REST, Redux,RxJS, Git, Jest, Jasmine,

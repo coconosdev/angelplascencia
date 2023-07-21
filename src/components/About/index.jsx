@@ -1,5 +1,7 @@
 import React from 'react';
 import { formatDistance } from 'date-fns';
+import Heading from '../Heading';
+
 import './styles.scss';
 
 const About = () => {
@@ -9,7 +11,7 @@ const About = () => {
 
   return (
     <div>
-      <h1>About me</h1>
+      <Heading>About me</Heading>
       <p>
         Front-end developer with {yearsExperience} of experience. Comfortable working in both
         Angular and React environments and supporting back-end development. Adept at collaborating

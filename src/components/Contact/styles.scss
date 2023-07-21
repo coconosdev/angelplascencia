@@ -1,0 +1,59 @@
+@import '/src/styles/base/variables';
+
+.form-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  max-width: 600px;
+  gap: 15px;
+
+  input,
+  textarea {
+    border: none;
+    height: 50px;
+    width: 100%;
+    padding: 15px;
+    background-color: #222;
+    color: $color-white;
+    max-width: 100%;
+    font-size: 18px;
+    font-family: $body-font;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 200px;
+  }
+
+  .button-wrapper {
+    margin-top: 0;
+    display: flex;
+    flex-flow: row nowrap;
+
+    @media (min-width: 720px) {
+      margin-left: auto;
+    }
+  }
+}
+
+.divider-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 15px;
+
+  @media (min-width: 720px) {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
+
+  div {
+    flex: 1;
+  }
+}

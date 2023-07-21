@@ -1,0 +1,32 @@
+h1 {
+  span {
+    &:hover {
+      animation: dubstep 1.2858s infinite ease;
+    }
+  }
+}
+
+@keyframes dubstep {
+  0% {
+    text-shadow: 0 0 0 #fff;
+  }
+  40% {
+    text-shadow: 3px 0 0 #ffaa22;
+  }
+  43% {
+    text-shadow: 3px 0 0 #ffaa22, 15px 0 0 #aa22ff, -7px 0 0 #aaff22;
+    color: #f1f1f1;
+  }
+  44% {
+    text-shadow: 3px 0 0 #ffaa22, 15px 2px 0 #aa22ff, -7px -1.5px 0 #aaff22;
+    color: rgba(0, 0, 0, 0.2);
+  }
+  45% {
+    text-shadow: 3px 0 0 #ffaa22, 15px 0 0 #aa22ff, -7px 0 0 #aaff22;
+    color: #f1f1f1;
+  }
+
+  100% {
+    text-shadow: 0 0 0 #fff;
+  }
+}

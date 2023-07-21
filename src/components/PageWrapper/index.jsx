@@ -6,12 +6,14 @@ import Footer from '../Footer';
 const PageWrapper = ({ children }) => {
   return (
     <div className="pageWrapper">
-      <div id="stars"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
+      <div className="star-wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+      </div>
       <Nav></Nav>
       <div className="mainWrapper">{children}</div>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 };

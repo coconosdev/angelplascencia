@@ -21,14 +21,20 @@
   @media (min-width: 720px) {
     flex-flow: column nowrap;
     align-items: center;
-    position: static;
+    // position: static;
     gap: 15px;
+    right: auto;
+    bottom: 0;
   }
 
   li {
     a {
       transition: 0.2s all ease-in-out;
       color: $color-main;
+
+      &.active {
+        color: $color-white;
+      }
 
       &:hover {
         color: $color-white;

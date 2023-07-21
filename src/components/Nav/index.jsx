@@ -1,36 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faGear, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faGear, faEnvelope, faList } from '@fortawesome/free-solid-svg-icons';
 import './styles.scss';
 
 const Nav = () => {
   return (
     <ul className="nav">
       <li>
-        <Link to={`/`}>
+        <NavLink to={`/`} className={({ isActive }) => (isActive ? 'active' : '')}>
           <FontAwesomeIcon icon={faHome} />
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link to={`/about`}>
+        <NavLink to={`/about`} className={({ isActive }) => (isActive ? 'active' : '')}>
           <FontAwesomeIcon icon={faUser} />
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link to={`/skills`}>
+        <NavLink to={`/skills`} className={({ isActive }) => (isActive ? 'active' : '')}>
           <FontAwesomeIcon icon={faGear} />
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link to={`/experience`}>
-          <FontAwesomeIcon icon={faUser} />
-        </Link>
+        <NavLink to={`/experience`} className={({ isActive }) => (isActive ? 'active' : '')}>
+          <FontAwesomeIcon icon={faList} />
+        </NavLink>
       </li>
       <li>
-        <Link to={`/contact`}>
+        <NavLink to={`/contact`} className={({ isActive }) => (isActive ? 'active' : '')}>
           <FontAwesomeIcon icon={faEnvelope} />
-        </Link>
+        </NavLink>
       </li>
     </ul>
   );

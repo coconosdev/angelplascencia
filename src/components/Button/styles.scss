@@ -8,10 +8,15 @@
   padding: 10px 15px;
   color: $color-main;
   font-weight: bold;
+  width: 100%;
 
   &:hover {
     background-color: $color-main;
     color: $background-secondary;
     cursor: pointer;
+  }
+
+  @media (min-width: 720px) {
+    width: auto;
   }
 }
