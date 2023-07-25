@@ -8,6 +8,8 @@ import {
   faLocationDot,
   faArrowUpRightFromSquare,
   faChevronDown,
+  faBuilding,
+  faCalendar,
 } from '@fortawesome/free-solid-svg-icons';
 
 import './styles.scss';
@@ -23,8 +25,10 @@ const CoolAccordion = ({ array }) => {
               aria-controls={`panel${element.id}-content`}
               id={`panel${element.id}-header`}
             >
-              <span>{element.title}</span>
-              <span>{element.dates}</span>
+              <span>
+                {element.title} <span className="place">@ {element.place}</span>
+              </span>
+              <span className="topDates">{element.dates}</span>
             </AccordionSummary>
             <AccordionDetails>
               <div className="data">
@@ -37,6 +41,16 @@ const CoolAccordion = ({ array }) => {
                   <a href={element.page} target="_blank">
                     {element.page.split('//www.')[1]}
                   </a>
+                </div>
+              </div>
+              <div className="data">
+                <div className="where">
+                  <FontAwesomeIcon icon={faBuilding} />
+                  {element.place}
+                </div>
+                <div className="page">
+                  <FontAwesomeIcon icon={faCalendar} />
+                  {element.dates}
                 </div>
               </div>
               <img src={element.logo} alt="Logo" className="logo" />

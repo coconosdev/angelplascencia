@@ -30,6 +30,23 @@
       align-items: center;
       justify-content: space-between;
       padding-right: 15px;
+      font-size: 18px;
+
+      .place {
+        display: none;
+
+        @media (min-width: 720px) {
+          display: inline-block;
+        }
+      }
+
+      .topDates {
+        display: none;
+
+        @media (min-width: 720px) {
+          display: inline-block;
+        }
+      }
     }
 
     .MuiAccordionSummary-expandIconWrapper {
@@ -60,6 +77,7 @@
     justify-content: flex-start;
     margin-bottom: 15px;
     position: relative;
+    font-size: 14px;
 
     svg {
       margin-right: 8px;
@@ -71,16 +89,24 @@
   }
 
   .logo {
+    display: none;
     position: absolute;
     right: 20px;
     top: 33px;
     max-height: 60px;
     max-width: 100px;
+
+    @media (min-width: 720px) {
+      display: block;
+    }
   }
 
   .description {
     font-size: 16px;
-    padding-right: 120px;
+
+    @media (min-width: 720px) {
+      padding-right: 120px;
+    }
   }
 
   .skills {
@@ -98,10 +124,6 @@
       background-color: indigo;
       color: $color-white;
       font-size: 14px;
-
-      // + .pill {
-      //   margin-left: 10px;
-      // }
     }
   }
 }

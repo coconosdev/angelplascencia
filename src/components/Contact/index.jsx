@@ -29,6 +29,13 @@ const Contact = () => {
   return (
     <div>
       <Heading>Contact</Heading>
+      <p>
+        Or just download my{' '}
+        <a href="/Resume Angel Plascencia.pdf" download>
+          resume
+        </a>
+        .
+      </p>
       <form ref={form} onSubmit={sendEmail} className="form-wrapper">
         <div className="divider-wrapper">
           <div>
