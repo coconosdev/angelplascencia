@@ -20,7 +20,7 @@ const Skills = () => {
       </p>
       <p>
         Visit my{' '}
-        <a href="https://www.linkedin.com/in/angel-l-16b037176" target="_blank">
+        <a href="https://www.linkedin.com/in/angel-p-16b037176" target="_blank">
           linkedin
         </a>{' '}
         profile for more details or just <Link to={`/contact`}>contact me</Link>.
