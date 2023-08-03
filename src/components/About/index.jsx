@@ -13,15 +13,15 @@ const About = () => {
     <div>
       <Heading>About me</Heading>
       <p>
-        Front-end developer with {yearsExperience} of experience. Comfortable working in both
-        Angular and React environments and supporting back-end development. Adept at collaborating
-        with cross-functional teams to deliver high-quality, scalable solutions. Experience in
-        test-driven development under Agile methodologies.
+        Front-end developer with {yearsExperience.replace('about', '')} of experience. I have honed
+        my skills in both Angular and React, allowing me to seamlessly adapt to diverse projects.
+        Moreover, my proficiency in supporting back-end development ensures a cohesive and efficient
+        collaboration with full-stack teams. I am motivated by the opportunity that software
+        provides to positively impact the life of an individual, and the world as a whole.
       </p>
       <p>
         I like the front end spectrum of development but nowadays interested in a full stack future.
       </p>
-      <p>Love that the projects I do have an impact on the people who use them.</p>
     </div>
   );
 };

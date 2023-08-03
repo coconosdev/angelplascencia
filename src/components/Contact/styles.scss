@@ -23,6 +23,13 @@
     &::placeholder {
       color: white;
     }
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within,
+    &:active {
+      outline: 1px solid $color-main;
+    }
   }
 
   textarea {

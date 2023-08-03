@@ -16,7 +16,7 @@ const Skills = () => {
       </p>
       <p>
         I also have full stack experience, using technologies like Node, Express, PostgreSQL,
-        GraphQL, MySQL and Spring
+        GraphQL, MySQL and Spring.
       </p>
       <p>
         Visit my{' '}
