@@ -5,9 +5,10 @@ import juniperLogo from '../../images/logos/juniper.png';
 import novaLogo from '../../images/logos/nova.png';
 import webptLogo from '../../images/logos/webpt.png';
 import dreamboxLogo from '../../images/logos/dreambox.png';
-import findepLogo from '../../images/logos/findep.png';
 import repvueLogo from '../../images/logos/repvue.png';
 import deckersLogo from '../../images/logos/deckers.png';
+import kohoLogo from '../../images/logos/koho.png';
+import transactLogo from '../../images/logos/transact.png';
 
 import './styles.scss';
 
@@ -19,8 +20,7 @@ const experienceArray = [
     place: 'Juniper Data Center',
     where: 'La Paz, México',
     page: 'https://www.juniperdatacenter.com',
-    description:
-      'Developing and building sites from scratch, following the designs the most pixel-perfect possible.',
+    description: 'Developing and building sites from scratch, following the designs the most pixel-perfect possible.',
     skills: ['HTML5', 'LESS', 'CSS3'],
     logo: juniperLogo,
   },
@@ -31,8 +31,7 @@ const experienceArray = [
     place: 'Nova Solutions Systems',
     where: 'México City',
     page: 'https://www.novasolutionsystems.com',
-    description:
-      'Developing reusable components using AngularJS, Angular and / or React for different projects.',
+    description: 'Developing reusable components using AngularJS, Angular and / or React for different projects.',
     skills: ['AngularJS', 'Angular', 'React', 'Jasmine', 'HTML5', 'SASS', 'Git', 'SCRUM'],
     logo: novaLogo,
   },
@@ -60,17 +59,6 @@ const experienceArray = [
     logo: dreamboxLogo,
   },
   {
-    id: '5',
-    title: 'Full Stack Developer',
-    dates: '2021 - 2022',
-    place: 'Financiera Independencia',
-    where: 'Remote',
-    page: 'https://www.independencia.com.mx',
-    description: 'Developing web and mobile applications using React and Java.',
-    skills: ['React', 'Java', 'HTML5', 'SASS', 'Git', 'SCRUM'],
-    logo: findepLogo,
-  },
-  {
     id: '6',
     title: 'Front End Developer',
     dates: '2022 - 2023',
@@ -91,17 +79,29 @@ const experienceArray = [
     page: 'https://www.deckers.com',
     description:
       'Developing Server Side Rendered Progressive Web Applications built with React, Next.js and browser APIs.',
-    skills: [
-      'React',
-      'Next.js',
-      'Storybook',
-      'Jasmine',
-      'Typescript',
-      'HTML5',
-      'SASS',
-      'Git',
-      'SCRUM',
-    ],
+    skills: ['React', 'Next.js', 'Storybook', 'Jasmine', 'Typescript', 'HTML5', 'SASS', 'Git', 'SCRUM'],
+    logo: deckersLogo,
+  },
+  {
+    id: '8',
+    title: 'Front End Developer',
+    dates: '2023 - 2024',
+    place: 'KOHO',
+    where: 'Remote',
+    page: 'https://www.koho.ca',
+    description: 'Developing Mobile Bank Application using Ionic',
+    skills: ['Ionic', 'Angular', 'Storybook', 'Jasmine', 'Typescript', 'HTML5', 'SASS', 'Git', 'SCRUM'],
+    logo: deckersLogo,
+  },
+  {
+    id: '9',
+    title: 'Front End Developer',
+    dates: '2024 - Present',
+    place: 'Transact Campus',
+    where: 'Remote',
+    page: 'https://www.transactcampus.com',
+    description: 'Developing payments application for Campuses using ANgular',
+    skills: ['Angular', 'Storybook', 'Jasmine', 'Typescript', 'HTML5', 'SASS', 'Git', 'SCRUM'],
     logo: deckersLogo,
   },
 ];
