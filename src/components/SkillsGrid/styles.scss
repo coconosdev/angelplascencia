@@ -2,15 +2,8 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, $skill-card-size);
+  grid-template-columns: repeat(auto-fill, minmax($skill-card-size, 1fr));
   gap: $space-lg;
   margin: $space-xl 0;
-
-  @media (min-width: 720px) {
-    grid-template-columns: repeat(4, $skill-card-size);
-  }
-
-  @media (min-width: 1300px) {
-    grid-template-columns: repeat(5, $skill-card-size);
-  }
+  max-width: 580px;
 }

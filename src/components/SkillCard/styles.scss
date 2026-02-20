@@ -1,7 +1,7 @@
 @import '/src/styles/base/variables';
 
 .skill-card {
-  width: $skill-card-size;
+  width: 100%;
   height: $skill-card-size;
   display: flex;
   flex-direction: column;
