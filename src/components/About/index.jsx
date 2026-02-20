@@ -27,7 +27,7 @@ const About = () => {
 
       <div className="about__body">
         <p>
-          I am a front-end engineer with over 10 years of professional experience building
+          I am a front-end engineer with over {yearsOfExperience} years of professional experience building
           scalable, accessible web applications in React and Angular. I have shipped production
           features across fintech, edtech, e-commerce, and healthcare SaaS products, working
           in remote-first environments with Agile teams.
