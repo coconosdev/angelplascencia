@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles.scss';
 
-const Button = ({ className, children, link, type }) => {
+const Button = ({ children, type = 'button', variant = 'primary', onClick }) => {
   return (
-    <button className="button" type={type}>
-      {children}
+    <button className={`btn btn--${variant}`} type={type} onClick={onClick}>
+      <span className="btn__text">{children}</span>
     </button>
   );
 };

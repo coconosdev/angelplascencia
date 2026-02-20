@@ -11,3 +11,38 @@ $color-main: #00dc82;
 $color-secondary: #004e3e;
 
 $color-white: #ccc;
+
+// --- Spacing scale ---
+$space-xs:  4px;
+$space-sm:  8px;
+$space-md:  16px;
+$space-lg:  24px;
+$space-xl:  40px;
+$space-2xl: 64px;
+
+// --- Border radius ---
+$radius-sm:   4px;
+$radius-md:   8px;
+$radius-pill: 100px;
+
+// --- Transitions ---
+$transition-fast: 0.15s ease-in-out;
+$transition-base: 0.25s ease-in-out;
+$transition-slow: 0.4s ease-in-out;
+
+// --- Glitch colors ---
+$glitch-red:  #ff003c;
+$glitch-cyan: #00e5ff;
+
+// --- Z-index scale ---
+$z-stars:   0;
+$z-content: 1;
+$z-nav:     10;
+$z-tooltip: 20;
+$z-toast:   100;
+
+// --- Nav ---
+$nav-width-desktop: 64px;
+
+// --- Skills ---
+$skill-card-size: 120px;

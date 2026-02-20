@@ -1,27 +1,48 @@
 import React from 'react';
-import { formatDistance } from 'date-fns';
 import Heading from '../Heading';
-
+import { experienceData } from '../../data/experience';
 import './styles.scss';
 
-const About = () => {
-  const startDate = new Date('06/20/2015');
-  const today = new Date();
-  const yearsExperience = formatDistance(startDate, today);
+const yearsOfExperience = new Date().getFullYear() - 2015;
 
+const stats = [
+  { label: 'Years of Experience', value: `${yearsOfExperience}+` },
+  { label: 'Companies', value: `${experienceData.length}+` },
+  { label: 'Specialization', value: 'Front End' },
+];
+
+const About = () => {
   return (
-    <div>
+    <div className="about">
       <Heading>About me</Heading>
-      <p>
-        Front-end developer with {yearsExperience.replace('about', '')} of experience. I have honed
-        my skills in both Angular and React, allowing me to seamlessly adapt to diverse projects.
-        Moreover, my proficiency in supporting back-end development ensures a cohesive and efficient
-        collaboration with full-stack teams. I am motivated by the opportunity that software
-        provides to positively impact the life of an individual, and the world as a whole.
-      </p>
-      <p>
-        I like the front end spectrum of development but nowadays interested in a full stack future.
-      </p>
+
+      <div className="about__stats">
+        {stats.map(({ label, value }) => (
+          <div className="about__stat" key={label}>
+            <span className="about__stat-value">{value}</span>
+            <span className="about__stat-label">{label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="about__body">
+        <p>
+          I am a front-end engineer with over 10 years of professional experience building
+          scalable, accessible web applications in React and Angular. I have shipped production
+          features across fintech, edtech, e-commerce, and healthcare SaaS products, working
+          in remote-first environments with Agile teams.
+        </p>
+        <p>
+          My core strengths are TypeScript, component architecture, state management with
+          RxJS and Redux, design-system development in Storybook, and writing high-quality
+          unit tests with Jest and Jasmine. I care deeply about performance, accessibility
+          (WCAG), and clean maintainable code.
+        </p>
+        <p>
+          I am open to senior front-end and full-stack roles where I can contribute to both
+          product quality and team culture.
+        </p>
+      </div>
     </div>
   );
 };

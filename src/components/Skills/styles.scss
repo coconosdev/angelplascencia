@@ -1,0 +1,17 @@
+@import '/src/styles/base/variables';
+
+.skills-page {
+  &__summary {
+    max-width: 580px;
+    line-height: 1.7;
+    color: $color-white;
+    opacity: 0.85;
+    margin-bottom: 0;
+  }
+
+  &__cta {
+    margin-top: 0;
+    font-size: 16px;
+    opacity: 0.75;
+  }
+}

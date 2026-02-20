@@ -10,47 +10,86 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
-
-    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
-      (result) => {
-        toast.success('E-mail sent successfully!', {
-          position: 'bottom-center',
-        });
-      },
-      (error) => {
-        toast.error(error.text);
-      }
-    );
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => toast.success('Message sent successfully!', { position: 'bottom-center' }),
+        (error) => toast.error(error.text)
+      );
   };
 
   return (
-    <div>
+    <div className="contact">
       <Heading>Contact</Heading>
-      <p>
-        Or just download my{' '}
+
+      <p className="contact__intro">
+        Have a role or project in mind? Send a message or{' '}
         <a href="/Resume Angel Plascencia.pdf" download>
-          resume
+          download my resume
         </a>
         .
       </p>
-      <form ref={form} onSubmit={sendEmail} className="form-wrapper">
-        <div className="divider-wrapper">
-          <div>
-            <input type="text" name="user_name" placeholder="Name" required />
+
+      <form ref={form} onSubmit={sendEmail} className="contact__form" noValidate>
+        <div className="contact__row">
+          <div className="contact__field">
+            <input
+              type="text"
+              name="user_name"
+              id="user_name"
+              placeholder=" "
+              required
+              aria-label="Your name"
+            />
+            <label htmlFor="user_name">Name</label>
           </div>
-          <div>
-            <input type="email" name="user_email" placeholder="Email" required />
+
+          <div className="contact__field">
+            <input
+              type="email"
+              name="user_email"
+              id="user_email"
+              placeholder=" "
+              required
+              aria-label="Your email address"
+            />
+            <label htmlFor="user_email">Email</label>
           </div>
         </div>
-        <input type="subject" name="subject" placeholder="Subject" required />
-        <textarea name="message" placeholder="Message" required />
-        <div className="button-wrapper">
-          <Button type="submit">Send</Button>
+
+        <div className="contact__field">
+          <input
+            type="text"
+            name="subject"
+            id="subject"
+            placeholder=" "
+            required
+            aria-label="Subject"
+          />
+          <label htmlFor="subject">Subject</label>
+        </div>
+
+        <div className="contact__field contact__field--textarea">
+          <textarea
+            name="message"
+            id="message"
+            placeholder=" "
+            required
+            aria-label="Your message"
+          />
+          <label htmlFor="message">Message</label>
+        </div>
+
+        <div className="contact__submit">
+          <Button type="submit">Send Message</Button>
         </div>
       </form>
+
       <Toaster />
     </div>
   );

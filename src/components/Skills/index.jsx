@@ -1,31 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Cube from '../Cube';
 import Heading from '../Heading';
-
+import SkillsGrid from '../SkillsGrid';
 import './styles.scss';
 
 const Skills = () => {
   return (
-    <div>
+    <div className="skills-page">
       <Heading>Skills</Heading>
-      <p>
-        The main area of my expertise is front end development building medium and big web apps with
-        React, Angular, Javascript, Typescript, Next.js, REST, Redux,RxJS, Git, Jest, Jasmine,
-        Karma, HTML, CSS, LESS, SASS, Redux, Bootstrap, Materialize and jQuery.
+
+      <p className="skills-page__summary">
+        I specialize in front-end engineering with deep expertise in React, Angular, TypeScript,
+        and Next.js. My toolkit includes state management with RxJS and Redux, component
+        documentation via Storybook, and testing with Jest and Jasmine. I am proficient in modern
+        CSS with SASS/SCSS, and have full-stack experience with Node.js, Express, PostgreSQL,
+        GraphQL, and REST APIs.
       </p>
-      <p>
-        I also have full stack experience, using technologies like Node, Express, PostgreSQL,
-        GraphQL, MySQL and Spring.
-      </p>
-      <p>
-        Visit my{' '}
-        <a href="https://www.linkedin.com/in/angel-p-16b037176" target="_blank">
-          linkedin
+
+      <SkillsGrid />
+
+      <p className="skills-page__cta">
+        View my full history on{' '}
+        <a href="https://www.linkedin.com/in/angel-p-16b037176" target="_blank" rel="noreferrer">
+          LinkedIn
         </a>{' '}
-        profile for more details or just <Link to={`/contact`}>contact me</Link>.
+        or <Link to="/contact">get in touch</Link>.
       </p>
-      <Cube />
     </div>
   );
 };

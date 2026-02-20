@@ -1,0 +1,231 @@
+@import '/src/styles/base/variables';
+@import '/src/styles/abstracts/mixins';
+
+.timeline {
+  max-width: 660px;
+  position: relative;
+
+  @media (min-width: 720px) {
+    padding-left: $space-lg;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        $color-main,
+        rgba($color-main, 0.05)
+      );
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: $space-md;
+
+    @media (min-width: 720px) {
+      &::before {
+        content: '';
+        position: absolute;
+        left: calc(-#{$space-lg} - 4px);
+        top: 22px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 2px solid rgba($color-main, 0.4);
+        transition: background-color $transition-base, border-color $transition-base;
+      }
+
+      &--open::before {
+        background-color: $color-main;
+        border-color: $color-main;
+      }
+    }
+  }
+
+  // --- Header (accordion trigger) ---
+  &__header {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-secondary;
+    border: 1px solid rgba($color-main, 0.1);
+    border-radius: $radius-md;
+    padding: $space-md $space-lg;
+    cursor: pointer;
+    transition: background-color $transition-base, border-color $transition-base;
+    text-align: left;
+    color: $color-white;
+    font-family: $body-font;
+    font-size: 16px;
+
+    &:hover {
+      background-color: rgba($color-main, 0.05);
+      border-color: rgba($color-main, 0.3);
+    }
+
+    .timeline__item--open & {
+      border-color: rgba($color-main, 0.4);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-color: transparent;
+    }
+  }
+
+  &__header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  &__header-right {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: $space-sm;
+    flex-shrink: 0;
+    margin-left: $space-md;
+  }
+
+  &__role {
+    font-weight: 700;
+    font-size: 17px;
+    color: $color-white;
+  }
+
+  &__company {
+    font-size: 14px;
+    color: $color-main;
+    opacity: 0.8;
+
+    @media (max-width: 719px) {
+      display: none;
+    }
+  }
+
+  &__dates {
+    font-size: 13px;
+    color: $color-white;
+    opacity: 0.5;
+    white-space: nowrap;
+
+    @media (max-width: 719px) {
+      display: none;
+    }
+  }
+
+  &__chevron {
+    color: $color-main;
+    font-size: 13px;
+    transition: transform $transition-base;
+
+    .timeline__item--open & {
+      transform: rotate(180deg);
+    }
+  }
+
+  // --- Body (expanded content) ---
+  &__body {
+    background-color: rgba($color-main, 0.03);
+    border: 1px solid rgba($color-main, 0.4);
+    border-top: none;
+    border-bottom-left-radius: $radius-md;
+    border-bottom-right-radius: $radius-md;
+    padding: $space-md $space-lg;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $space-sm $space-lg;
+    margin-bottom: $space-md;
+    font-size: 13px;
+    color: $color-white;
+    opacity: 0.7;
+  }
+
+  &__meta-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: $space-xs;
+    text-decoration: none;
+    color: inherit;
+
+    &--link {
+      color: $color-main;
+      opacity: 1;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    svg {
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: $color-white;
+    opacity: 0.85;
+    margin: 0 0 $space-md 0;
+
+    @media (min-width: 720px) {
+      padding-right: 120px;
+    }
+  }
+
+  &__logo {
+    max-height: 50px;
+    max-width: 100px;
+    object-fit: contain;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: $space-md;
+
+    @media (min-width: 720px) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__skills {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $space-xs $space-sm;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__pill {
+    @include skill-pill;
+  }
+}

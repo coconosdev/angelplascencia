@@ -4,40 +4,100 @@
   background-color: $background-secondary;
   display: flex;
   flex-flow: row nowrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: $space-sm $space-md;
   margin: 0;
   list-style: none;
+  gap: $space-lg;
 
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  gap: 30px;
-  align-items: baseline;
-  z-index: 1;
+  z-index: $z-nav;
 
   @media (min-width: 720px) {
     flex-flow: column nowrap;
     align-items: center;
-    gap: 15px;
+    gap: $space-md;
     right: auto;
     bottom: 0;
+    width: $nav-width-desktop;
+    padding: $space-xl $space-sm;
   }
 
-  li {
-    a {
-      transition: 0.2s all ease-in-out;
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba($color-main, 0.5);
+    transition: color $transition-base;
+    text-decoration: none;
+    padding: $space-xs;
+
+    &:hover,
+    &:focus-visible {
       color: $color-main;
+      outline: none;
 
-      &.active {
-        color: $color-white;
+      .nav__tooltip {
+        opacity: 1;
+        transform: translateY(-50%) translateX(8px);
+        pointer-events: none;
       }
+    }
 
-      &:hover {
-        color: $color-white;
+    &--active {
+      color: $color-white;
+
+      @media (min-width: 720px) {
+        &::before {
+          content: '';
+          position: absolute;
+          left: -#{$space-sm};
+          top: 50%;
+          transform: translateY(-50%);
+          width: 2px;
+          height: 20px;
+          background-color: $color-main;
+          border-radius: $radius-sm;
+        }
       }
+    }
+  }
+
+  &__icon {
+    font-size: 18px;
+  }
+
+  &__tooltip {
+    position: absolute;
+    left: calc(100% + #{$space-sm});
+    top: 50%;
+    transform: translateY(-50%) translateX(0);
+    background-color: $color-secondary;
+    color: $color-main;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: $space-xs $space-sm;
+    border-radius: $radius-sm;
+    opacity: 0;
+    transition: opacity $transition-fast, transform $transition-fast;
+    pointer-events: none;
+    z-index: $z-tooltip;
+
+    // On mobile nav (top bar), hide tooltip entirely — not enough space
+    @media (max-width: 719px) {
+      display: none;
     }
   }
 }

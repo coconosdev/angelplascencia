@@ -11,9 +11,11 @@ const PageWrapper = ({ children }) => {
         <div id="stars2"></div>
         <div id="stars3"></div>
       </div>
-      <Nav></Nav>
-      <div className="mainWrapper">{children}</div>
-      {/* <Footer></Footer> */}
+      <Nav />
+      <div className="mainWrapper">
+        {children}
+        <Footer />
+      </div>
     </div>
   );
 };

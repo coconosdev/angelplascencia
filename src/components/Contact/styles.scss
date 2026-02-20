@@ -1,66 +1,104 @@
 @import '/src/styles/base/variables';
 
-.form-wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: stretch;
-  justify-content: flex-start;
-  max-width: 600px;
-  gap: 15px;
-
-  input,
-  textarea {
-    border: none;
-    height: 50px;
-    width: 100%;
-    padding: 15px;
-    background-color: #222;
-    color: $color-white;
-    max-width: 100%;
-    font-size: 18px;
-    font-family: $body-font;
-
-    &::placeholder {
-      color: white;
-    }
-
-    &:focus,
-    &:focus-visible,
-    &:focus-within,
-    &:active {
-      outline: 1px solid $color-main;
-    }
+.contact {
+  &__intro {
+    opacity: 0.8;
+    max-width: 500px;
+    margin-bottom: $space-xl;
   }
 
-  textarea {
-    resize: vertical;
-    min-height: 200px;
-  }
-
-  .button-wrapper {
-    margin-top: 0;
+  &__form {
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    max-width: 600px;
+    gap: $space-lg;
+  }
+
+  &__row {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    gap: $space-lg;
 
     @media (min-width: 720px) {
-      margin-left: auto;
+      flex-flow: row nowrap;
     }
   }
-}
 
-.divider-wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 15px;
+  &__field {
+    position: relative;
+    flex: 1;
 
-  @media (min-width: 720px) {
-    flex-flow: row nowrap;
-    align-items: flex-start;
+    input,
+    textarea {
+      width: 100%;
+      padding: $space-lg $space-md $space-xs;
+      background-color: rgba($color-main, 0.04);
+      border: 1px solid rgba($color-main, 0.15);
+      border-radius: $radius-sm;
+      color: $color-white;
+      font-size: 16px;
+      font-family: $body-font;
+      transition: border-color $transition-base;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: transparent;
+      }
+
+      &:focus,
+      &:focus-visible {
+        outline: none;
+        border-color: $color-main;
+
+        + label {
+          top: 8px;
+          font-size: 11px;
+          color: $color-main;
+        }
+      }
+
+      &:not(:placeholder-shown) + label {
+        top: 8px;
+        font-size: 11px;
+        color: rgba($color-main, 0.7);
+      }
+    }
+
+    input {
+      height: 56px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 160px;
+      padding-top: $space-xl;
+    }
+
+    label {
+      position: absolute;
+      left: $space-md;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 15px;
+      color: $color-white;
+      opacity: 0.5;
+      pointer-events: none;
+      transition: top $transition-fast, font-size $transition-fast, color $transition-fast;
+    }
+
+    &--textarea label {
+      top: $space-lg;
+      transform: none;
+    }
   }
 
-  div {
-    flex: 1;
+  &__submit {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
   }
 }

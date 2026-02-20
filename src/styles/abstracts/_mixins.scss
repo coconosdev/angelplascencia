@@ -1,0 +1,30 @@
+@import '../base/variables';
+
+// Responsive breakpoints — mirrors existing 720px / 1300px breakpoints
+@mixin respond-to($bp) {
+  @if $bp == 'tablet' {
+    @media (min-width: 720px) { @content; }
+  } @else if $bp == 'desktop' {
+    @media (min-width: 1300px) { @content; }
+  }
+}
+
+// Flex shorthand
+@mixin flex($dir: row, $align: center, $justify: flex-start, $wrap: nowrap) {
+  display: flex;
+  flex-flow: $dir $wrap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// Shared skill pill style used in ExperienceTimeline and SkillsGrid
+@mixin skill-pill {
+  padding: $space-xs $space-sm;
+  border-radius: $radius-pill;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba($color-main, 0.4);
+  background-color: rgba($color-main, 0.08);
+  color: $color-main;
+}

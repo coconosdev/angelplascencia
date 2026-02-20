@@ -1,0 +1,80 @@
+@import '/src/styles/base/variables';
+
+.skill-card {
+  width: $skill-card-size;
+  height: $skill-card-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-sm;
+  border: 1px solid rgba($color-main, 0.15);
+  border-radius: $radius-md;
+  background-color: rgba($color-main, 0.04);
+  cursor: default;
+  transition: border-color $transition-base, transform $transition-base,
+              box-shadow $transition-base;
+  position: relative;
+  overflow: hidden;
+
+  // Shimmer overlay on hover
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgba($color-main, 0.12) 50%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    opacity: 0;
+    transition: opacity $transition-slow;
+  }
+
+  &:hover {
+    border-color: rgba($color-main, 0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba($color-main, 0.1);
+
+    &::after {
+      opacity: 1;
+      animation: shimmer 0.7s ease forwards;
+    }
+
+    .skill-card__logo {
+      filter: brightness(1.1);
+    }
+
+    .skill-card__label {
+      opacity: 1;
+      color: $color-main;
+    }
+  }
+
+  &__logo-wrap {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: brightness(0.9);
+    transition: filter $transition-base;
+  }
+
+  &__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: $color-white;
+    text-align: center;
+    opacity: 0.75;
+    transition: opacity $transition-base, color $transition-base;
+  }
+}

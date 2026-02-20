@@ -1,22 +1,52 @@
 @import '/src/styles/base/variables';
 
-.button {
-  transition: 0.2s all ease-in-out;
-  background-color: transparent;
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: $body-font;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  border: 2px solid $color-main;
-  padding: 10px 15px;
-  color: $color-main;
-  font-weight: bold;
-  width: 100%;
+  cursor: pointer;
+  transition: background-color $transition-base, color $transition-base,
+              border-color $transition-base, transform $transition-fast;
+  border-radius: 2px;
 
-  &:hover {
-    background-color: $color-main;
-    color: $background-secondary;
-    cursor: pointer;
+  &:active {
+    transform: scale(0.97);
   }
 
-  @media (min-width: 720px) {
-    width: auto;
+  &--primary {
+    background-color: transparent;
+    border: 2px solid $color-main;
+    color: $color-main;
+
+    &:hover {
+      background-color: $color-main;
+      color: $background-secondary;
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    border: none;
+    color: $color-white;
+    opacity: 0.6;
+    padding: 10px 0;
+
+    &:hover {
+      opacity: 1;
+      color: $color-main;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
   }
 }

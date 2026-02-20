@@ -1,20 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles.scss';
 import Button from '../Button';
+import './styles.scss';
 
 const Main = () => {
   return (
-    <>
-      <h1 className="title">
-        <span>Hi,</span> <span>I'm Angel Plascencia,</span> <span>Software Engineer.</span>
+    <section className="hero" aria-label="Introduction">
+      <div className="hero__eyebrow">Hello, I am</div>
+
+      <h1 className="hero__name">
+        Angel Plascencia
       </h1>
-      <div className="button-wrapper">
-        <Link to={`/contact`}>
+
+      <p className="hero__subtitle">
+        <span className="hero__subtitle-text">Front-End Engineer</span>
+        <span className="hero__subtitle-caret" aria-hidden="true" />
+      </p>
+
+      <div className="hero__actions">
+        <Link to="/contact">
           <Button>Contact me</Button>
         </Link>
+        <a href="/Resume Angel Plascencia.pdf" download className="hero__download">
+          Download Resume
+        </a>
       </div>
-    </>
+    </section>
   );
 };
 

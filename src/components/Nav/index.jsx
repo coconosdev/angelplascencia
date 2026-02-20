@@ -4,35 +4,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faGear, faEnvelope, faList } from '@fortawesome/free-solid-svg-icons';
 import './styles.scss';
 
+const navItems = [
+  { to: '/',           icon: faHome,     label: 'Home' },
+  { to: '/about',      icon: faUser,     label: 'About' },
+  { to: '/skills',     icon: faGear,     label: 'Skills' },
+  { to: '/experience', icon: faList,     label: 'Experience' },
+  { to: '/contact',    icon: faEnvelope, label: 'Contact' },
+];
+
 const Nav = () => {
   return (
-    <ul className="nav">
-      <li>
-        <NavLink to={`/`} className={({ isActive }) => (isActive ? 'active' : '')}>
-          <FontAwesomeIcon icon={faHome} />
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={`/about`} className={({ isActive }) => (isActive ? 'active' : '')}>
-          <FontAwesomeIcon icon={faUser} />
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={`/skills`} className={({ isActive }) => (isActive ? 'active' : '')}>
-          <FontAwesomeIcon icon={faGear} />
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={`/experience`} className={({ isActive }) => (isActive ? 'active' : '')}>
-          <FontAwesomeIcon icon={faList} />
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={`/contact`} className={({ isActive }) => (isActive ? 'active' : '')}>
-          <FontAwesomeIcon icon={faEnvelope} />
-        </NavLink>
-      </li>
-    </ul>
+    <nav aria-label="Site navigation">
+      <ul className="nav">
+        {navItems.map(({ to, icon, label }) => (
+          <li key={to} className="nav__item">
+            <NavLink
+              to={to}
+              end={to === '/'}
+              className={({ isActive }) => `nav__link${isActive ? ' nav__link--active' : ''}`}
+              aria-label={label}
+            >
+              <FontAwesomeIcon icon={icon} className="nav__icon" aria-hidden="true" />
+              <span className="nav__tooltip" aria-hidden="true">{label}</span>
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 
