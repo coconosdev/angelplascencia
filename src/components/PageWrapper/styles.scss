@@ -5,6 +5,9 @@
 }
 
 .mainWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   padding-top: 5vh;
   padding-left: 15px;
   padding-right: 15px;
