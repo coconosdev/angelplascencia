@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   min-height: 85vh;
-  padding-top: $space-xl;
 
   &__eyebrow {
     font-size: 14px;
@@ -69,7 +68,9 @@
     color: $color-white;
     opacity: 0.5;
     text-decoration: none;
-    transition: opacity $transition-base, color $transition-base;
+    transition:
+      opacity $transition-base,
+      color $transition-base;
     font-weight: 600;
 
     &:hover {
